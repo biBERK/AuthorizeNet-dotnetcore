@@ -23,9 +23,9 @@ namespace AuthorizeNetCore.Models
         [JsonProperty(PropertyName = "customer")]
         public Customer Customer { get; set; }
         [JsonProperty(PropertyName = "billTo")]
-        public Billto BillTo { get; set; }
+        public CustomerContact BillTo { get; set; }
         [JsonProperty(PropertyName = "shipTo")]
-        public Shipto ShipTo { get; set; }
+        public CustomerContact ShipTo { get; set; }
         [JsonProperty(PropertyName = "customerIP")]
         public string CustomerIP { get; set; }
         [JsonProperty(PropertyName = "transactionSettings")]
