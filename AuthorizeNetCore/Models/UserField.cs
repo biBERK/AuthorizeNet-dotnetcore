@@ -2,7 +2,7 @@
 
 namespace AuthorizeNetCore.Models
 {
-    public class Userfield
+    public class UserField
     {
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
