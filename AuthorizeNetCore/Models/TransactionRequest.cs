@@ -11,7 +11,7 @@ namespace AuthorizeNetCore.Models
         [JsonProperty(PropertyName = "payment")]
         public Payment Payment { get; set; }
         [JsonProperty(PropertyName = "lineItems")]
-        public Lineitems LineItems { get; set; }
+        public LineItems LineItems { get; set; }
         [JsonProperty(PropertyName = "tax")]
         public Tax Tax { get; set; }
         [JsonProperty(PropertyName = "duty")]
