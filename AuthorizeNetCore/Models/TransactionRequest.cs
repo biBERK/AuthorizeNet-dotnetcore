@@ -29,8 +29,8 @@ namespace AuthorizeNetCore.Models
         [JsonProperty(PropertyName = "customerIP")]
         public string CustomerIP { get; set; }
         [JsonProperty(PropertyName = "transactionSettings")]
-        public Transactionsettings TransactionSettings { get; set; }
+        public TransactionSettings TransactionSettings { get; set; }
         [JsonProperty(PropertyName = "userFields")]
-        public Userfields UserFields { get; set; }
+        public UserFields UserFields { get; set; }
     }
 }
