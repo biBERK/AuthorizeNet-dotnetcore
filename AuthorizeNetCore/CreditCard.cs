@@ -1,7 +1,8 @@
 ﻿using AuthorizeNetCore.Models;
-using System;
-using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AuthorizeNetCore
 {
@@ -18,12 +19,30 @@ namespace AuthorizeNetCore
             _transactionKey = transactionKey;
         }
 
-        public TransactionResponse Charge(ChargeCreditCardRequest chargeCreditCardRequest)
+        public async Task<ChargeCreditCardResponse> ChargeAsync(ChargeCreditCardRequest chargeCreditCardRequest)
         {
-            return new TransactionResponse();
+            // Serialize the ChargeCreditCardRequest object
+            var stringContent = new StringContent(JsonConvert.SerializeObject(chargeCreditCardRequest), Encoding.UTF8, "application/json");
+
+            // Connect to Authorize.net
+            var httpClient = new HttpClient();
+            var response = await httpClient.PostAsync(_authorizeNetUrl, stringContent);
+
+            // If response is not successful, return appropriate transaction response
+            if (!response.IsSuccessStatusCode)
+            {
+                var resultMessage = new ResultMessage { Code = response.StatusCode.ToString(), Text = response.ReasonPhrase };
+                var resultMessages = new ResultMessage[1];
+                resultMessages[0] = resultMessage;
+                return new ChargeCreditCardResponse { Results = new Results { ResultCode = "Error", ResultMessages = resultMessages } };
+            }
+
+            // Deserialize the response content
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<ChargeCreditCardResponse>(json);
         }
 
-        public TransactionResponse Charge(string nounce, string referenceId, decimal amount, string customerId, string customerIpAddress)
+        public async Task<ChargeCreditCardResponse> ChargeAsync(string nounce, string referenceId, decimal amount, string customerId, string customerIpAddress)
         {
             // Build the request
             var chargeCreditCardRequest = new ChargeCreditCardRequest
@@ -54,7 +73,7 @@ namespace AuthorizeNetCore
                 }
             };
 
-            return Charge(chargeCreditCardRequest);
+            return await ChargeAsync(chargeCreditCardRequest);
         }
     }
 }
