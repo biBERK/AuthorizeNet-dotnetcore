@@ -2,7 +2,7 @@
 
 namespace AuthorizeNetCore.Models
 {
-    public class Messages
+    public class Results
     {
         [JsonProperty(PropertyName = "resultCode")]
         public string ResultCode { get; set; }
