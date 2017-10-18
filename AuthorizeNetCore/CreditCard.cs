@@ -42,7 +42,7 @@ namespace AuthorizeNetCore
             return JsonConvert.DeserializeObject<ChargeCreditCardResponse>(json);
         }
 
-        public async Task<ChargeCreditCardResponse> ChargeAsync(string nounce, string referenceId, decimal amount, string customerId, string customerIpAddress)
+        public async Task<ChargeCreditCardResponse> ChargeAsync(string nonce, string referenceId, decimal amount, string customerId, string customerIpAddress)
         {
             // Build the request
             var chargeCreditCardRequest = new ChargeCreditCardRequest
@@ -61,7 +61,7 @@ namespace AuthorizeNetCore
                         LineItems = new LineItems { LineItem = new LineItem[0] },
                         Payment = new Payment
                         {
-                            OpaqueData = new OpaqueData { NonceValue = nounce }
+                            OpaqueData = new OpaqueData { NonceValue = nonce }
                         },
                         PoNumber = "",
                         Shipping = new Shipping(),
