@@ -25,3 +25,7 @@ Here is the sample using the minimalistic approach:
 /// ChargeAsync(string nounce, string referenceId, decimal amount, string customerId, string customerIpAddress)
 var chargeResponse = await creditCard.ChargeAsync("opaqueData_NOUNCE_Value", "YOUR_REFERENCE_ID", 99.95, "CUSTOMER_ID", "192.168.1.1")
 ```
+
+
+<hr/>
+This repository is subject to the MIT License, contained in this repository. Any biBERK team member contributions are provided AS IS, with absolutely no warranty or guarantee whatsoever. Use of the code from any repository or commit is solely at your own risk.
