@@ -54,21 +54,21 @@ namespace AuthorizeNetCore
                     TransactionRequest = new TransactionRequest
                     {
                         Amount = amount.ToString(),
-                        BillTo = new CustomerContact(),
+                        //BillTo = new CustomerContact(),
                         Customer = new Customer { Id = customerId },
                         CustomerIP = customerIpAddress,
-                        Duty = new Duty(),
-                        LineItems = new LineItems { LineItem = new LineItem[0] },
+                        //Duty = new Duty(),
+                        //LineItems = new LineItems { LineItem = new LineItem[0] },
                         Payment = new Payment
                         {
                             OpaqueData = new OpaqueData { NonceValue = nonce }
                         },
-                        PoNumber = "",
-                        Shipping = new Shipping(),
-                        ShipTo = new CustomerContact(),
-                        Tax = new Tax(),
-                        TransactionSettings = new TransactionSettings { Setting = new Setting[0] },
-                        UserFields = new UserFields { UserField = new UserField[0] }
+                        //PoNumber = "",
+                        //Shipping = new Shipping(),
+                        //ShipTo = new CustomerContact(),
+                        //Tax = new Tax(),
+                        //TransactionSettings = new TransactionSettings { Setting = new Setting[0] },
+                        //UserFields = new UserFields { UserField = new UserField[0] }
                     }
                 }
             };
@@ -88,21 +88,21 @@ namespace AuthorizeNetCore
                     TransactionRequest = new TransactionRequest
                     {
                         Amount = amount.ToString(),
-                        BillTo = new CustomerContact(),
+                        //BillTo = new CustomerContact(),
                         Customer = new Customer { Id = customerId },
                         CustomerIP = customerIpAddress,
-                        Duty = new Duty(),
-                        LineItems = new LineItems { LineItem = new LineItem[0] },
+                        //Duty = new Duty(),
+                        //LineItems = new LineItems { LineItem = new LineItem[0] },
                         Payment = new Payment
                         {
                             OpaqueData = new OpaqueData { NonceValue = nonce }
                         },
-                        PoNumber = "",
-                        Shipping = new Shipping(),
-                        ShipTo = new CustomerContact(),
-                        Tax = new Tax(),
-                        TransactionSettings = new TransactionSettings { Setting = new Setting[0] },
-                        UserFields = new UserFields { UserField = new UserField[0] }
+                        //PoNumber = "",
+                        //Shipping = new Shipping(),
+                        //ShipTo = new CustomerContact(),
+                        //Tax = new Tax(),
+                        //TransactionSettings = new TransactionSettings { Setting = new Setting[0] },
+                        //UserFields = new UserFields { UserField = new UserField[0] }
                     }
                 }
             };
