@@ -2,7 +2,7 @@
 
 namespace AuthorizeNetCore.Models
 {
-    public class ChargeCreditCard
+    public class ChargeCreditCardRequest
     {
         [JsonProperty(PropertyName = "createTransactionRequest")]
         public CreateTransactionRequest CreateTransactionRequest { get; set; }

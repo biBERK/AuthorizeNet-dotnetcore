@@ -5,6 +5,6 @@ namespace AuthorizeNetCore.Models
     public class TransactionSettings
     {
         [JsonProperty(PropertyName = "settingName")]
-        public Setting Setting { get; set; }
+        public Setting[] Setting { get; set; }
     }
 }
