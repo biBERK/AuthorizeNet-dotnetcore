@@ -32,5 +32,10 @@ namespace AuthorizeNetCore.Models
         public TransactionSettings TransactionSettings { get; set; }
         [JsonProperty(PropertyName = "userFields")]
         public UserFields UserFields { get; set; }
+
+        public TransactionRequest()
+        {
+            TransactionType = "authCaptureTransaction";
+        }
     }
 }
