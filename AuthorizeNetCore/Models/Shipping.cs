@@ -10,5 +10,10 @@ namespace AuthorizeNetCore.Models
         public string Name { get; set; }
         [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
+
+        public Shipping()
+        {
+            Amount = "0";
+        }
     }
 }

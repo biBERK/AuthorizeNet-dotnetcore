@@ -14,5 +14,11 @@ namespace AuthorizeNetCore.Models
         public string Quantity { get; set; }
         [JsonProperty(PropertyName = "unitPrice")]
         public string UnitPrice { get; set; }
+
+        public LineItem()
+        {
+            UnitPrice = "0";
+            Quantity = "0";
+        }
     }
 }

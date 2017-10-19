@@ -57,19 +57,19 @@ namespace AuthorizeNetCore
                         //BillTo = new CustomerContact(),
                         Customer = new Customer { Id = customerId },
                         CustomerIP = customerIpAddress,
-                        //Duty = new Duty(),
+                        Duty = new Duty(),
                         //LineItems = new LineItems { LineItem = new LineItem[0] },
                         Payment = new Payment
                         {
                             OpaqueData = new OpaqueData { NonceValue = nonce }
                         },
                         //PoNumber = "",
-                        //Shipping = new Shipping(),
+                        Shipping = new Shipping(),
                         //ShipTo = new CustomerContact(),
-                        Tax = new Tax { Amount = "0" },
-                        //TransactionSettings = new TransactionSettings { Setting = new Setting[0] },
-                        //UserFields = new UserFields { UserField = new UserField[0] }
+                        Tax = new Tax()
                     }
+                    //TransactionSettings = new TransactionSettings { Setting = new Setting[0] },
+                    //UserFields = new UserFields { UserField = new UserField[0] }
                 }
             };
 
@@ -91,16 +91,16 @@ namespace AuthorizeNetCore
                         //BillTo = new CustomerContact(),
                         Customer = new Customer { Id = customerId },
                         CustomerIP = customerIpAddress,
-                        //Duty = new Duty(),
+                        Duty = new Duty(),
                         //LineItems = new LineItems { LineItem = new LineItem[0] },
                         Payment = new Payment
                         {
                             OpaqueData = new OpaqueData { NonceValue = nonce }
                         },
                         //PoNumber = "",
-                        //Shipping = new Shipping(),
+                        Shipping = new Shipping(),
                         //ShipTo = new CustomerContact(),
-                        //Tax = new Tax(),
+                        Tax = new Tax()
                         //TransactionSettings = new TransactionSettings { Setting = new Setting[0] },
                         //UserFields = new UserFields { UserField = new UserField[0] }
                     }
