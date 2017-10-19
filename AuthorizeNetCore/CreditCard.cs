@@ -66,7 +66,7 @@ namespace AuthorizeNetCore
                         //PoNumber = "",
                         //Shipping = new Shipping(),
                         //ShipTo = new CustomerContact(),
-                        //Tax = new Tax(),
+                        Tax = new Tax { Amount = "0" },
                         //TransactionSettings = new TransactionSettings { Setting = new Setting[0] },
                         //UserFields = new UserFields { UserField = new UserField[0] }
                     }
