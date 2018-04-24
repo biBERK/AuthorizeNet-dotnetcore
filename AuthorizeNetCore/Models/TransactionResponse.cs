@@ -26,7 +26,9 @@ namespace AuthorizeNetCore.Models
         public string AccountType { get; set; }
         [JsonProperty(PropertyName = "messages")]
         public TransactionMessage[] Messages { get; set; }
-        [JsonProperty(PropertyName = "userFields")]
+		[JsonProperty(PropertyName ="errors")]
+		public Errors[] Errors { get; set; }
+		[JsonProperty(PropertyName = "userFields")]
         public UserField[] UserFields { get; set; }
     }
 }
