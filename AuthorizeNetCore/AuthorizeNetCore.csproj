@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
     <PackageId>AuthorizeNetCore</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>jasongaylord</Authors>
     <Description>A .NET Standard package for Authorize.NET APIs, specifically using AcceptJS.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
