@@ -8,7 +8,7 @@ namespace AuthorizeNetCore.Models
         public string CardNumber { get; set; }
         [JsonProperty(PropertyName = "expirationDate")]
         public string ExpirationDate { get; set; }
-        [JsonProperty(PropertyName = "cardCode")]
-        public string CardCode { get; set; }
+        //[JsonProperty(PropertyName = "cardCode")]
+        //public string CardCode { get; set; }
     }
 }
