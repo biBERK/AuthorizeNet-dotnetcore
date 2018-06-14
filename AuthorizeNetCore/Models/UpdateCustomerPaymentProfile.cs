@@ -1,14 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AuthorizeNetCore.Models
 {
 	public class UpdateCustomerPaymentProfile
 	{
-		[JsonProperty(PropertyName = "customerType")]
-		public string CustomerType { get; set; }
+		//[JsonProperty(PropertyName = "customerType")]
+		//public string CustomerType { get; set; }
 
 		[JsonProperty(PropertyName = "billTo")]
 		public CustomerContact BillTo { get; set; }

@@ -4,8 +4,8 @@ namespace AuthorizeNetCore.Models
 {
 	public class CreateCustomerPaymentProfile
 	{
-		[JsonProperty(PropertyName = "customerType")]
-		public string CustomerType { get; set; }
+		//[JsonProperty(PropertyName = "customerType")]
+		//public string CustomerType { get; set; }
 
 		[JsonProperty(PropertyName = "billTo")]
 		public CustomerContact BillTo { get; set; }

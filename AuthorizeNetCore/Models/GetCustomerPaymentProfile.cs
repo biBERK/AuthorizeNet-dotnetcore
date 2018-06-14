@@ -17,6 +17,6 @@ namespace AuthorizeNetCore.Models
 		public CustomerContact BillTo { get; set; }
 
 		[JsonProperty(PropertyName = "payment")]
-		public Payment Payment { get; set; }
+		public GetPayment Payment { get; set; }
 	}
 }

@@ -47,6 +47,31 @@ namespace AuthorizeNetCore
 			return await CreateAsync(createCustomerProfileRequest);
 		}
 
+		public async Task<CreateCustomerProfileResponse> CreateAsync(string referenceId, string customerId, string email, string description, string transactionId)
+		{
+			var createCustomerProfileRequest = new CreateCustomerProfileFromTransactionRequest
+			{
+				CustomerProfileGenerateTransactionRequest = new CustomerProfileGenerateTransactionRequest
+				{
+					MerchantAuthentication = new MerchantAuthentication
+					{
+						LoginId = _apiLoginId,
+						TransactionKey = _transactionKey
+					},
+					ReferenceId = referenceId,
+					CustomerProfile = new CreateCustomerProfile
+					{
+						Email = email,
+						MerchantCustomerId = customerId,
+						Description = description
+					},
+					TransactionId = transactionId
+				}
+			};
+
+			return await new AuthorizeNetResult(_authorizeNetUrl).PostAsync<CreateCustomerProfileFromTransactionRequest, CreateCustomerProfileResponse>(createCustomerProfileRequest);
+		}
+
 		public async Task<GetCustomerProfileResponse> GetAsync(GetCustomerProfileRequest getCustomerProfileRequest)
 		{
 			return await new AuthorizeNetResult(_authorizeNetUrl).PostAsync<GetCustomerProfileRequest, GetCustomerProfileResponse>(getCustomerProfileRequest);
