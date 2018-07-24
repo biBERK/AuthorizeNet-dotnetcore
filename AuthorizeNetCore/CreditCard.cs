@@ -48,5 +48,37 @@ namespace AuthorizeNetCore
 
 			return await ChargeAsync(chargeCreditCardRequest);
 		}
+
+		public async Task<ChargeCreditCardResponse> ChargeAsync(string nonce, string referenceId, decimal amount, string customerId, string customerIpAddress, string invoiceId)
+		{
+			// Build the request
+			var chargeCreditCardRequest = new ChargeCreditCardRequest
+			{
+				CreateTransactionRequest = new CreateTransactionRequest
+				{
+					MerchantAuthentication = new MerchantAuthentication { LoginId = _apiLoginId, TransactionKey = _transactionKey },
+					ReferenceId = referenceId,
+					TransactionRequest = new TransactionRequest
+					{
+						Amount = amount.ToString(),
+						Customer = new Customer { Id = customerId },
+						CustomerIP = customerIpAddress,
+						Duty = new Duty(),
+						Payment = new Payment
+						{
+							OpaqueData = new OpaqueData { NonceValue = nonce }
+						},
+						Order = new Order
+						{
+							InvoiceNumber = invoiceId
+						},
+						Shipping = new Shipping(),
+						Tax = new Tax()
+					}
+				}
+			};
+
+			return await ChargeAsync(chargeCreditCardRequest);
+		}
 	}
 }

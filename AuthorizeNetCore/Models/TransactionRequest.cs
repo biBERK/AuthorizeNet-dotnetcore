@@ -10,7 +10,9 @@ namespace AuthorizeNetCore.Models
         public string Amount { get; set; }
         [JsonProperty(PropertyName = "payment")]
         public Payment Payment { get; set; }
-        [JsonProperty(PropertyName = "lineItems")]
+		[JsonProperty(PropertyName = "order")]
+		public Order Order { get; set; }
+		[JsonProperty(PropertyName = "lineItems")]
         public LineItems LineItems { get; set; }
         [JsonProperty(PropertyName = "tax")]
         public Tax Tax { get; set; }
