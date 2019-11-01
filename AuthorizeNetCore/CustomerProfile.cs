@@ -120,5 +120,29 @@ namespace AuthorizeNetCore
 
 			return await PostAsync(updateCustomerProfileRequest);
 		}
+
+		public async Task<DeleteCustomerProfileResponse> DeleteAsync(DeleteCustomerProfileRequest deleteCustomerProfileRequest)
+		{
+			return await new AuthorizeNetResult(_authorizeNetUrl).PostAsync<DeleteCustomerProfileRequest, DeleteCustomerProfileResponse>(deleteCustomerProfileRequest);
+		}
+
+		public async Task<DeleteCustomerProfileResponse> DeleteAsync(string referenceId, string customerProfileId)
+		{
+			var deleteCustomerProfileRequest = new DeleteCustomerProfileRequest
+			{
+				 DeleteCustomerProfileTransactionRequest = new DeleteCustomerProfileTransactionRequest
+				{
+					MerchantAuthentication = new MerchantAuthentication
+					{
+						LoginId = _apiLoginId,
+						TransactionKey = _transactionKey
+					},
+					CustomerProfileId = customerProfileId,
+					ReferenceId = referenceId
+				}
+			};
+
+			return await DeleteAsync(deleteCustomerProfileRequest);
+		}
 	}
 }
